@@ -42,7 +42,6 @@ const dragStop = () => {
     isDragging = false;
     carousel.classList.remove("dragging");
 };
-
 carousel.addEventListener("mousedown", dragStart);
 carousel.addEventListener("mousemove", dragging);
 carousel.addEventListener("mouseup", dragStop);
@@ -57,3 +56,4 @@ radioButtons.forEach((radio, index) => {
         carousel.scrollLeft = index * firstCardWidth * Math.min(1,carouselChildrens.length- cardPreView);
     });
 });
+

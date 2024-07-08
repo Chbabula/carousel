@@ -11,6 +11,7 @@ body {
     min-height: 100vh;
     padding: 0 35px;
     background: linear-gradient(to left top, #031A9A, #8B53FF);
+    position: relative;
 }
 
 .wrapper {
@@ -20,28 +21,29 @@ body {
     overflow: hidden;
 }
 
-.wrapper i {
+body > i {
     height: 40px;
     width: 40px;
     background: #fff;
     text-align: center;
     line-height: 40px;
+    padding: 10px;
     border-radius: 50%;
     cursor: pointer;
     position: absolute;
-    top: 50%;
+    margin-top: 8px;
+    top: 45%;
     font-size: 1.25rem;
-    transform: translateY(-50%);
-    box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
     z-index: 10;
 }
 
-.wrapper i:first-child {
-    left: 97%;
+#left {
+    left: 13%; 
 }
 
-.wrapper i:last-child {
-    right: 20%;
+#right {
+    right: 13%; 
 }
 
 .wrapper .carousel {
@@ -85,10 +87,6 @@ body {
     transition: transform 0.3s ease-in-out;
 }
 
-/* .carousel .card:hover {
-    transform: translateY(-10px);
-} */
-
 .card .img {
     width: 140px;
     height: 140px;
@@ -109,6 +107,21 @@ body {
     text-align: center;
     line-height: 1.5;
     margin: 0;
+}
+.card .btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #0323d8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.card .btn:hover {
+    background-color: #8B53FF;
 }
 
 .radio-buttons {
@@ -138,8 +151,54 @@ body {
     } 
 }
 
+
+@media screen and (max-width: 900px) {
+    
+    #left {
+        left: 8px;
+    }
+    
+    #right {
+        right: 8px;
+    }
+}
+@media screen and (min-width: 900px) {
+    
+    #left {
+        left: 5%;
+    }
+    
+    #right {
+        right: 5%;
+    }
+}
 @media screen and (max-width: 600px) {
     .carousel .card {
         flex: 0 0 100%;
     } 
+    #left {
+        left: 10px ;
+    }
+    
+    #right {
+        right: 10px;
+    }
+}
+@media screen and (max-width: 320px) {
+    body > i {
+        height: 35px; 
+        width: 35px; 
+        padding: 5;
+        line-height: 50px; 
+        font-size: 0.9rem; 
+        left: 88%; 
+        transform: translateX(10%);
+    }
+    #left {
+        left: -3px; 
+    }
+
+    #right {
+        right: -3px; 
+    }
 }
