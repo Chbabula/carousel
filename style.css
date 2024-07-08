@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0 35px;
+    background: linear-gradient(to left top, #031A9A, #8B53FF);
+}
+
+.wrapper {
+    max-width: 1100px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.wrapper i {
+    height: 40px;
+    width: 40px;
+    background: #fff;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    font-size: 1.25rem;
+    transform: translateY(-50%);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+    z-index: 10;
+}
+
+.wrapper i:first-child {
+    left: 97%;
+}
+
+.wrapper i:last-child {
+    right: 20%;
+}
+
+.wrapper .carousel {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    padding: 20px 0;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel.dragging .card {
+    cursor: grab;
+    user-select: none;
+}
+
+.carousel.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+
+.carousel .card {
+    flex: 0 0 calc(33.333% - 10px);
+    scroll-snap-align: start;
+    height: 342px;
+    list-style: none;
+    background: #fff;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* .carousel .card:hover {
+    transform: translateY(-10px);
+} */
+
+.card .img {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 15px;
+}
+
+.card .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card p {
+    color: #333;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.radio-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.radio-buttons input[type="radio"] {
+    margin: 0 5px;
+    cursor: pointer;
+    width: 12px;
+    height: 12px;
+    appearance: none;
+    background: #ddd;
+    border-radius: 50%;
+    position: relative;
+}
+
+.radio-buttons input[type="radio"]:checked {
+    background: #333;
+}
+
+@media screen and (max-width: 900px) {
+    .carousel .card {
+        flex: 0 0 calc(50% - 9px);
+    } 
+}
+
+@media screen and (max-width: 600px) {
+    .carousel .card {
+        flex: 0 0 100%;
+    } 
+}
